@@ -27,7 +27,7 @@ public class WeatherForecastController : ControllerBase
 
             await Task.Delay(5000, cancellation);
 
-            await Console.Out.WriteLineAsync("Carrying out Get WeatherForecast");
+            Console.WriteLine("Carrying out Get WeatherForecast");
 
             var result = Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
@@ -37,7 +37,7 @@ public class WeatherForecastController : ControllerBase
             })
             .ToArray();
 
-            await Console.Out.WriteLineAsync($"Number of results: " + result.Length);
+            Console.WriteLine($"Number of results: " + result.Length);
 
             return result;
         }
